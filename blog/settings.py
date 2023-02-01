@@ -121,6 +121,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
+
+STATIC_ROOT = 'staticfiles/'
+
 cloudinary.config( 
   cloud_name = "daj2tji3i", 
   api_key = "252849526677596", 
@@ -136,3 +139,4 @@ import cloudinary.api
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
