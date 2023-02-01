@@ -1,0 +1,30 @@
+{% include 'base.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+<style>
+   
+    body{
+        background-image: url(https://images.unsplash.com/photo-1511300636408-a63a89df3482?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fGxpZ2h0JTIwYmFja2dyb3VuZCUyMGltYWdlc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+/* 
+    }
+    .container{
+        margin: 30px;
+    }
+</style>
+
+
+<form action="" method="post" enctype="multipart/form-data">
+    <div class="container">
+    {% csrf_token %}
+    {{form|crispy}}
+    <button type="submit">submit</button>
+</div>
+</form>
+
+
+
+{% endblock %}

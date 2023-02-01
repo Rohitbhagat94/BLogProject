@@ -1,0 +1,59 @@
+
+{% include 'base.html' %}
+{% block content %}
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+            <style>
+    body{
+        background-image: url(https://i.pinimg.com/236x/37/d0/f9/37d0f9c5f6e0061a07e8ba143a642886.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+    nav.navbar.navbar-expand-lg.navbar-light {
+    margin-top: 39px;
+}
+</style>
+          
+        </style>
+       <div class="container">
+       <h2 class="text-center" style="font-style: italic; ;"> COMPLETE YOUR PROFILE</h2>
+        
+        <div>
+            First name: <input type="text"  name=""  class="form-control">
+        </div>
+        <br>
+        <div>
+            Last name: <input type="text" name="last_name" class="form-control" >
+        </div>
+        <br>
+        <div>
+           User : <input type="text" name="user" value="{{ user.username }}"   class="form-control">
+        </div>
+        <br>
+        <div>
+            Email: <input type="email" name="email" value=""  class="form-control">
+        </div>
+        <br>
+        <div>
+          Profile pic:  <input type="file" name="profile_pic"  class="form-control">
+        </div>
+        <br>
+        <div>
+            About_me : <input type="text" name="aboutme" class="form-control">
+        </div>
+        <br>
+       <button type="submit" class="btn btn-primary">submit</button>
+    </div>
+
+
+
+
+
+
+    </form>
+
+    {% endblock %}
+
+    {% include 'footer.html' %}

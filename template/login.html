@@ -1,0 +1,144 @@
+{% include 'base.html' %}
+{% block content %}
+
+
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+        
+    }
+    body{
+        /* display: flex; */
+        /* justify-content: center; */
+        /* align-items: center; */
+        /* min-height: 100vh; */
+        /* background-image: url(https://images.unsplash.com/photo-1511300636408-a63a89df3482?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fGxpZ2h0JTIwYmFja2dyb3VuZCUyMGltYWdlc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60); */
+        background-image: url(https://media.istockphoto.com/id/1347643197/photo/sunrise-blur-background-panorama.jpg?b=1&s=170667a&w=0&k=20&c=xahD0zIEj03im_aCzZyqNrJCziMFbryoj-wtfPySPA0=);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+/* 
+/* 
+        /* background-image: url(https://media.istockphoto.com/id/184948373/photo/close-up-of-a-blog-key.jpg?b=1&s=170667a&w=0&k=20&c=DgT_m3-uYEVKf0pV37lDQmWwWf58vQ-GUzZgvAhk6ZA=);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+         */ 
+    }
+    
+    .container2 {
+        /* position: relative;
+        padding: 50px;
+        background: #fff;
+        width: 600px;
+        display: table;
+        margin: 100px auto;
+        gap: 20px;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+        background-image: url(https://images.unsplash.com/photo-1511300636408-a63a89df3482?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fGxpZ2h0JTIwYmFja2dyb3VuZCUyMGltYWdlc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60://media.istockphoto.com/id/1188030698/photo/the-gray-and-silver-are-light-black-with-white-the-gradient-is-the-surface-with-templates.jpg?b=1&s=170667a&w=0&k=20&c=X8fwVaGuN0LQztu9YwWE1ESQB5nQIn01Py4Mdj6HY1w=);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed; */
+        box-shadow: 10px 10px 40px black;
+    border-radius: 20px;
+    display: table;
+    max-width: 60%;
+    margin: 150px auto;
+    padding: 50px;
+    backdrop-filter: blur(7px);
+       
+
+        /* font-weight: 500;
+        border-left: 15px solid firebrick;
+        line-height: 1em;
+        padding-left: 10px;
+        transition: 0.5s;
+        color: black;
+        */
+    }
+
+
+/* form {
+    background: cyan;
+} */
+form 
+/*         
+    background-image:  url(https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80);
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-attachment: fixed;
+    width: 47%;
+    margin-top: 130px;
+    height: 278px; */
+    /* } */
+    /* span {
+    text-align: center; */
+
+/* } */
+/* .text-center.class {
+    background-color: aquamarine; */
+
+    input[type="text"] {
+    border-radius: 15px;
+    text-align: center;
+}
+input[type="password"] {
+    border-radius: 15px;
+    text-align: center;
+}
+
+   
+    
+
+</style>
+<div class="container2">
+<h2 class="text-center" style="  margin: 26px;
+
+font-family: ui-rounded;font-style: italic;"> Please Login to Continue</h2>
+
+<form action="/login" method="post">
+    {% csrf_token %}
+    <div class="text-center class">
+    <div style="font-size: large; font-style: italic;">
+        Username: <input type="text" placeholder="username"  name="username" >
+    </div>
+    <br>
+    <div style="font-size: large; font-style: italic;">
+        Password: <input type="password" placeholder="password"  name="password" >
+
+    </div>
+    <br>
+    
+    <button type="submit" class="btn btn-primary">Submit</button>&nbsp; &nbsp;&nbsp;  
+    <span style="color: red
+    ;" >OR</span>&nbsp; &nbsp;&nbsp;
+    <a href="/user" class="btn btn-success">Signup</a>
+    <br>
+    <div>
+     
+    </div>
+
+    </div>
+</form>
+
+
+
+
+   
+   
+
+   
+
+</div>
+ 
+{% endblock %}
+
+{% for i in messages%}
+{{i}}
+</div>
+</div>
+{% endfor %}
+

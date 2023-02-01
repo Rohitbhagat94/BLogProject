@@ -1,0 +1,66 @@
+{% include 'base.html' %}
+{% block content %}
+
+    <style>
+      .container{
+        margin-top: 25px;
+      }
+      body{
+        background-image: url(https://i.pinimg.com/236x/fa/74/19/fa74196a48afae019218aa503fa29f79.jpg);
+       background-repeat: no-repeat;
+       background-attachment: fixed;
+        background-size: cover;
+      }
+      h3.card-title {
+    font-size: 3rem;
+    text-align: center;
+}
+
+img.card-img-top {
+    border-radius: 10px;
+    height: 500px;
+    object-fit: cover;
+    margin-top: -13px;
+}
+.card-text{
+  width: 95%;
+  margin: auto;
+  text-align: justify;
+  margin-left: 50px;
+}
+    </style>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <h3  class="card-title">{{data.title}}</h3>
+            <br>
+        <img src="{{data.image.url}}" class="card-img-top" alt="...">
+          </div>
+          <div class="col-lg-8">
+            {% if user.username == data.upload_by  %}
+          <a href="{% url 'delete' data.id %} "><i class="fa fa-trash-o" style="font-size:36px"></i></a>
+          <a href="{% url 'update' data.id %} "><i class="fa fa-edit" style="font-size:36px"></i></a>
+          {% else %}
+
+          {% endif %}
+            <br>
+            <h4> Description -</h4>
+          <p style="font-style: italic; "  class="card-text">{{data.descrption}}</p>
+          <h4 style=" text-align: end; ">{{data.upload_by}}</h4>
+          <h5 style=" text-align: end;">{{data.upload_time}}</h5>
+          
+          
+          
+          </div>
+        </div>
+      </div>
+   
+    
+    
+
+
+    {% endblock %}
+
+    {% include 'footer.html' %}
+    

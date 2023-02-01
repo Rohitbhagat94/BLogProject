@@ -1,0 +1,81 @@
+{% include 'base.html' %}
+{% block content %}
+
+<style>
+   *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+    }
+  body{
+    /* display: flex; */
+        /* justify-content: center; */
+        /* align-items: center; */
+        /* background-image: url(https://i.pinimg.com/236x/02/50/4e/02504e59ef03fbc60e19e9344c1778ca.jpg); */
+        /* background-image: url(https://media.istockphoto.com/id/577642414/vector/abstract-background-blurred-image-sunset.jpg?s=612x612&w=0&k=20&c=YEBSRBmdvQGFvbwwXVWRdd9Ohjy16soRrTHdIT8eFkY=); */
+        background-image: url(https://images.unsplash.com/photo-1512295767273-ac109ac3acfa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTUwfHxiYWNrZ3JvdW5kfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60);
+       
+        background-size: cover;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+  }
+  h1 {
+    text-align: center;
+    
+}
+.user{
+  box-shadow: 10px 10px 40px black;
+    border-radius: 20px;
+    display: table;
+    max-width: 60%;
+    margin: 70px auto;
+    padding: 50px;
+    backdrop-filter: blur(7px); 
+}
+ 
+    
+  
+</style>
+<div class="container user">
+
+  
+  <h1 style=" font-style: italic; color: black;" > WELCOME REGISTER YOURSELF</h1>
+  
+  <form action="" method="post">
+     {% csrf_token %}
+    
+    <class class="container">
+      <div style="font-size:large; font-style: italic ;">
+        Username : <input type="text" placeholder="username" class="form-control" name="Username">
+      </div>
+    <br>
+    <div style="font-size:large; font-style: italic;">
+      Password : <input type="password" placeholder="password" class="form-control" name="password">
+    </div>
+    <br>
+    <div style="font-size: large; font-style: italic;">
+      Confirmpassword : <input type="password" placeholder="confirmpassword" class="form-control" name="confirmpassword">
+    </div>
+    <br>
+
+    
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </class>
+  <br>
+  <br>
+  If you already have an account <a href="{% url 'login' %}">Login..</a>
+</form>
+
+</div>
+{% if messages %}
+{% for i in messages %}
+{{i}}
+{% endfor %}
+{% else %}
+{% endif %}   
+
+{% endblock %}
+
+

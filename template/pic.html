@@ -1,0 +1,29 @@
+{% include 'base.html' %}
+{% block content %}
+<style>
+    h2{
+        margin-top: 48px;
+        font-size: 2.5rem;
+    }
+    body{
+        background-image: url(https://i.pinimg.com/236x/8d/5e/89/8d5e89eb9432265467470d4b5259e484.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+</style>
+
+<form action="" method="post" enctype="multipart/form-data" >
+    {% csrf_token %}
+    <div class="container">
+    <h2>Add/Update Profile Photo</h2>
+    <hr>
+    <div>
+        Add Profile Photo <input type="file" name="update" class="form-control" >
+    </div>
+    <br>
+    <button type="submit" class="btn btn-success">Add</button>
+</form>
+</div>
+{% endblock %}
+{% include 'footer.html' %}

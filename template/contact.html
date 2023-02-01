@@ -1,0 +1,35 @@
+{% include 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<style>
+    body{
+        background-image: url(https://i.pinimg.com/236x/a2/4b/55/a24b55de7a5baf9b9e51872a91d19f6c.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+    .text-center{
+        margin-top: 90px;
+    }
+</style>
+
+<div class="container">
+<h1 class="text-center" style="color: darkblue; font-style: italic;" >IF YOU FACE ANY PROBLEM U CAN CONTACT US THANKYOU</h1>
+<form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form|crispy}}
+<br>
+<button type="submit" class="btn btn-primary">submit</button>
+</form>
+</div>
+{% if user.is_superuser %}
+{% for i in data %}
+<h5>{{i.Emailus}}</h5>
+<p>{{i.Reason}}</p>
+{% endfor %}
+{% else %}
+{% endif %}
+
+{% endblock %}
+{% include 'footer.html' %}
